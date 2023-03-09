@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
     entry:{
@@ -13,15 +14,21 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                loader: './src/loader/consoleLoader',
-                options: {
-                    author: 'hello loader',
-                    email: 'helloloader@qq.com'
-                }
+                use:[
+                    {loader: './src/loader/testLoader'},
+                    {
+                        loader: './src/loader/consoleLoader',
+                        options: {
+                            author: 'hello loader',
+                            email: 'helloloader@qq.com'
+                        }
+                    }
+                ]
             }
         ]
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin()
     ]
 }
