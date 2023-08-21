@@ -42,6 +42,7 @@ module.exports = class FileListTxtWebpackPlugin {
                 },
             };
             let content = compilation.assets["index.html"]._value.toString();
+
             compilation.assets["index.html"] = {
                 source: function () {
                     // 定义文件的内容
