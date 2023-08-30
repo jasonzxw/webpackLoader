@@ -1,3 +1,9 @@
+/*
+ * @author: jason_zuo
+ * @LastEditors: jason_zuo
+ * @LastEditTime: 2023-08-30 14:39:46
+ * @FilePath: \webpackLoader\webpack.config.js
+ */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -43,7 +49,7 @@ module.exports = {
     // moduleIds: 'deterministic',
     //  runtimeChunk: 'single',
     splitChunks: {
-      chunks: "async",
+      chunks: "initial",// initial all async
     },
   },
   plugins: [
